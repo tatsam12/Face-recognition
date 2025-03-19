@@ -1,11 +1,13 @@
+
 from tkinter import*
 from tkinter import ttk
 from PIL import Image,ImageTk
 from student import Student
+import os
 
 
 class Face_Recognition_System:
-   def __init__(self,root):
+  def __init__(self,root):
     self.root = root
     self.root.geometry("1530x790+0+0")
     self.root.title("Face Recognition For Attendance")
@@ -56,18 +58,22 @@ class Face_Recognition_System:
 
     #Images button
 
-    b6_6=Button(text="Images",cursor="hand2", font=("times new roman",15,"bold"),bg="white",fg="blue")
+    b6_6=Button(text="Images",cursor="hand2",command=self.open_img,font=("times new roman",15,"bold"),bg="white",fg="blue")
     b6_6.place(x=500,y=580,width=220,height=40)
 
     #...... button
 
-    b7_7=Button(text=".....",cursor="hand2", font=("times new roman",15,"bold"),bg="white",fg="blue")
+    b7_7=Button(text=".....",cursor="hand2",command=self.open_img,font=("times new roman",15,"bold"),bg="white",fg="blue")
     b7_7.place(x=800,y=580,width=220,height=40)
 
     #Exit button
 
     b8_8=Button(text="Exit",cursor="hand2", font=("times new roman",15,"bold"),bg="white",fg="blue")
     b8_8.place(x=1100,y=580,width=220,height=40)
+  
+
+  def open_img(self):
+   os.startfile("data")
 
 
     #-----Function buttons-----
